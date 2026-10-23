@@ -2,7 +2,7 @@
 <title>Language breakdown</title>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
 <rect x="200" y="15" width="540" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="15" width="163.0" height="12" rx="6" fill="#e8823a"/>
+<rect x="200" y="15" width="163.1" height="12" rx="6" fill="#e8823a"/>
 <text x="30" y="21" font-size="13" fill="#f0f6fc" dominant-baseline="central">OCaml</text>
 <text x="830" y="21" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">30%</text>
 <rect x="200" y="49" width="540" height="12" rx="6" fill="#21262d"/>
@@ -10,11 +10,11 @@
 <text x="30" y="55" font-size="13" fill="#f0f6fc" dominant-baseline="central">JavaScript</text>
 <text x="830" y="55" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">25%</text>
 <rect x="200" y="83" width="540" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="83" width="121.0" height="12" rx="6" fill="#A97BFF"/>
+<rect x="200" y="83" width="121.1" height="12" rx="6" fill="#A97BFF"/>
 <text x="30" y="89" font-size="13" fill="#f0f6fc" dominant-baseline="central">Kotlin</text>
 <text x="830" y="89" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">22%</text>
 <rect x="200" y="117" width="540" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="117" width="60.6" height="12" rx="6" fill="#3572A5"/>
+<rect x="200" y="117" width="60.5" height="12" rx="6" fill="#3572A5"/>
 <text x="30" y="123" font-size="13" fill="#f0f6fc" dominant-baseline="central">Python</text>
 <text x="830" y="123" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">11%</text>
 <rect x="200" y="151" width="540" height="12" rx="6" fill="#21262d"/>
