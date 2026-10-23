@@ -1,0 +1,40 @@
+{
+  "title": "可能包含如下成分",
+  "items": [
+    {
+      "icon": "📚",
+      "name": "拉美文学",
+      "note": "正在高强度重读马尔克斯"
+    },
+    {
+      "icon": "🎭",
+      "name": "法语音乐剧",
+      "note": "Le Rouge et Le Noir、Mozart l'Opéra Rock"
+    },
+    {
+      "icon": "🗣️",
+      "name": "语言学",
+      "note": "汉藏语系汉语族 / 印欧语系罗曼语族"
+    },
+    {
+      "icon": "💻",
+      "name": "Vibe coding",
+      "note": "ScheduleX 和 Junimo-MCP 都很好玩，其余详见仓库"
+    },
+    {
+      "icon": "🥘",
+      "name": "西语学习中",
+      "note": "进度慢得要死"
+    },
+    {
+      "icon": "🍸",
+      "name": "金酒 / 麦当劳 / Gelato",
+      "note": "品鉴仙人，欢迎找我喝酒"
+    },
+    {
+      "icon": "🔍",
+      "name": "擅长找合法的冷门资料",
+      "note": "扣 1 无偿帮你找，和我不熟也没关系"
+    }
+  ]
+}
