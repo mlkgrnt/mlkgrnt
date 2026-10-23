@@ -3,25 +3,33 @@
   <img alt="Clementina Lam Choi" src="assets/hero-light.svg" width="100%">
 </picture>
 
-**可能包含如下成分**
+### 可能包含如下成分
 
 - 📚 **拉美文学** — 正在高强度重读马尔克斯
+
 - 🎭 **法语音乐剧** — *Le Rouge et Le Noir*、*Mozart l'Opéra Rock*
+
 - 🗣️ **语言学** — 汉藏语系汉语族 / 印欧语系罗曼语族
+
 - 💻 **Vibe coding** — ScheduleX 和 Junimo-MCP 都很好玩，其余详见仓库
+
 - 🇪🇸 **西语学习中** — 进度慢得要死
+
 - 🍸 **金酒** / 🍟 **麦当劳** / 🍨 **Gelato** — 品鉴仙人，欢迎找我喝酒
+
 - 🔍 **擅长找合法的冷门资料** — 扣 1 无偿帮你找，和我不熟也没关系
+
+---
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/langs-dark.svg">
   <img src="assets/langs-light.svg" width="100%" alt="按仓库字节数统计的语言构成">
 </picture>
 
-*Comiendo sólo por hambre, amando sin mentir.*
+<p align="center"><em>Comiendo sólo por hambre, amando sin mentir.</em></p>
 
 <p align="center">
-  <img src="assets/jelly-palette.svg" width="56%" alt="八套果冻配色">
+  <img src="assets/jelly-palette.svg" width="48%" alt="八套果冻配色">
 </p>
 
 <!--
@@ -33,5 +41,6 @@ banner 是 SVG 内联动画，会自己动：三颗果冻在八套配色之间�
 - 变色速度：把渐变里三个 stop 上的 dur="18s" 一起改
 - Q 弹幅度：改 <style> 里 @keyframes sq 的 scale 数值
 
+列表项之间空一行是故意的（GitHub 会渲染成松散列表，行距更松）。
 末尾那条色带不要的话，把 <p align="center"> 整段删掉。
 -->
