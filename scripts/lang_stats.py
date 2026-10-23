@@ -21,7 +21,6 @@
 
 from __future__ import annotations
 
-import colorsys
 import json
 import os
 import sys
@@ -111,25 +110,14 @@ FALLBACK = "#8b9a97"
 OTHER = "#b9c2c0"
 
 
-def readable(hex_color: str, theme: str) -> str:
-    """浅色底上把过亮的语言色压暗并提饱和，否则黄绿条几乎看不见。"""
-    if theme != "light":
-        return hex_color
-    h = hex_color.lstrip("#")
-    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-    hue, light, sat = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
-    if light <= 0.56:
-        return hex_color
-    r, g, b = colorsys.hls_to_rgb(hue, 0.48, sat)
-    return "#%02X%02X%02X" % (round(r * 255), round(g * 255), round(b * 255))
-
-
 def build_rows(totals: dict[str, int], theme: str) -> list[tuple[str, float, str]]:
+    """注意：颜色直接用 linguist 官方色，不做任何明暗改写。
+    GitHub 的仓库语言条就是在浅底上用这套色值，压暗/提饱和只会把柔和的黄紫变脏。"""
     if not totals:
         return []
     total = sum(totals.values())
     ranked = sorted(totals.items(), key=lambda kv: -kv[1])
-    rows = [(lang, size / total * 100, readable(COLORS.get(lang, FALLBACK), theme))
+    rows = [(lang, size / total * 100, COLORS.get(lang, FALLBACK))
             for lang, size in ranked[:TOP_N]]
     rest = total - sum(size for _, size in ranked[:TOP_N])
     if rest > 0 and len(ranked) > TOP_N:
