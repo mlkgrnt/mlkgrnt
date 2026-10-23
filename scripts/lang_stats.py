@@ -118,9 +118,9 @@ def readable(hex_color: str, theme: str) -> str:
     h = hex_color.lstrip("#")
     r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
     hue, light, sat = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
-    if light <= 0.58:
+    if light <= 0.56:
         return hex_color
-    r, g, b = colorsys.hls_to_rgb(hue, 0.52, min(1.0, sat * 1.05))
+    r, g, b = colorsys.hls_to_rgb(hue, 0.48, sat)
     return "#%02X%02X%02X" % (round(r * 255), round(g * 255), round(b * 255))
 
 
