@@ -13,6 +13,11 @@
 - 🍸 **金酒** / 🍟 **麦当劳** / 🍨 **Gelato** — 品鉴仙人，欢迎找我喝酒
 - 🔍 **擅长找合法的冷门资料** — 扣 1 无偿帮你找，和我不熟也没关系
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/langs-dark.svg">
+  <img src="assets/langs-light.svg" width="100%" alt="按仓库字节数统计的语言构成">
+</picture>
+
 *Comiendo sólo por hambre, amando sin mentir.*
 
 <p align="center">

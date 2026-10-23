@@ -21,6 +21,7 @@
 
 from __future__ import annotations
 
+import colorsys
 import json
 import os
 import sys
@@ -103,22 +104,24 @@ COLORS = {
     "Dart": "#00B4AB", "Swift": "#F05138", "Ruby": "#701516", "PHP": "#4F5D95",
     "Vue": "#41b883", "Svelte": "#ff3e00", "GLSL": "#5686a5", "ShaderLab": "#222c37",
     "Assembly": "#6E4C13", "MATLAB": "#e16737", "Lua": "#000080", "Perl": "#0298c3",
+    # GitHub 的 linguist 没给 OCaml 配色（所以官方页面上它显示为灰），这里自定义一个
+    "OCaml": "#e8823a",
 }
 FALLBACK = "#8b9a97"
 OTHER = "#b9c2c0"
 
 
 def readable(hex_color: str, theme: str) -> str:
-    """浅色底上把过亮的语言色压暗一点，否则黄绿色条几乎看不见。"""
+    """浅色底上把过亮的语言色压暗并提饱和，否则黄绿条几乎看不见。"""
     if theme != "light":
         return hex_color
     h = hex_color.lstrip("#")
     r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
-    lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255
-    if lum <= 0.62:
+    hue, light, sat = colorsys.rgb_to_hls(r / 255, g / 255, b / 255)
+    if light <= 0.58:
         return hex_color
-    f = 0.68
-    return "#%02X%02X%02X" % (round(r * f), round(g * f), round(b * f))
+    r, g, b = colorsys.hls_to_rgb(hue, 0.55, min(1.0, sat * 1.25))
+    return "#%02X%02X%02X" % (round(r * 255), round(g * 255), round(b * 255))
 
 
 def build_rows(totals: dict[str, int], theme: str) -> list[tuple[str, float, str]]:
