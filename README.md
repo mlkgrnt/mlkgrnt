@@ -8,7 +8,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/ingredients-dark.svg">
-    <img src="assets/ingredients-light.svg" width="100%" alt="可能包含如下成分：拉美文学，正在高强度重读马尔克斯；法语音乐剧，Le Rouge et Le Noir、Mozart l'Opéra Rock；语言学，汉藏语系汉语族 / 印欧语系罗曼语族；Vibe coding，ScheduleX 和 Junimo-MCP 都很好玩；西语学习中，进度慢得要死；金酒 / 麦当劳 / Gelato，品鉴仙人；擅长找合法的冷门资料，扣 1 无偿帮你找">
+    <img src="assets/ingredients-light.svg" width="100%" alt="可能包含如下成分：拉美文学，准备高强度读马尔克斯；法语音乐剧，Le Rouge et Le Noir & Mozart l'Opéra Rock；语言学，汉藏语系汉语族 / 印欧语系罗曼语族；Vibe Coding，ScheduleX 和 Junimo-MCP 都很好玩；西语学习中，但是进度慢得要死；金酒 / 麦当劳 / Gelato，品鉴仙人；擅长找合法的冷门资料，扣 1 无偿帮你找">
   </picture>
 </p>
 
