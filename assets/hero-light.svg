@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Clementina Lam Choi">
+  <title>Clementina Lam Choi</title>
+  <desc>Personal banner with animated jelly cubes, palette from jelly-cube-ocean.</desc>
+
+  <style>
+    @keyframes sq {
+      0%, 100% { transform: scale(1, 1); }
+      28%      { transform: scale(1.055, 0.945); }
+      54%      { transform: scale(0.972, 1.028); }
+      76%      { transform: scale(1.018, 0.982); }
+    }
+    .jb {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: sq 2.8s ease-in-out infinite;
+    }
+    .jb2 { animation-duration: 3.1s; animation-delay: -0.9s; }
+    .jb3 { animation-duration: 3.4s; animation-delay: -1.8s; }
+    @media (prefers-reduced-motion: reduce) { .jb { animation: none; } }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4fdfa"/>
+      <stop offset="0.55" stop-color="#eff8ff"/>
+      <stop offset="1" stop-color="#fdf6fb"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a9e4fb" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#a9e4fb" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd9ee" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ffd9ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="jelly" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0">
+        <animate attributeName="stop-color" dur="18s" repeatCount="indefinite"
+          values="#C2F7EA;#FFD6E6;#CAD9FF;#FFEEC0;#DFCEFF;#FFD9C5;#C3F7E1;#BAE8FF;#C2F7EA"/>
+      </stop>
+      <stop offset="0.55">
+        <animate attributeName="stop-color" dur="18s" repeatCount="indefinite"
+          values="#8EF0D8;#FFB3D1;#9DB8FF;#FFE08A;#C4A4FF;#FFB894;#8FF0C8;#7FD4FF;#8EF0D8"/>
+      </stop>
+      <stop offset="1">
+        <animate attributeName="stop-color" dur="18s" repeatCount="indefinite"
+          values="#7ED3C1;#E09EBB;#8BA2E3;#E0C57D;#AD91E3;#E0A286;#7FD3B3;#71BBE3;#7ED3C1"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <circle cx="1080" cy="40" r="240" fill="url(#blob1)"/>
+  <circle cx="800" cy="310" r="200" fill="url(#blob2)"/>
+  <rect x="0.5" y="0.5" width="1199" height="319" fill="none" stroke="#d8eeea" stroke-width="1"/>
+
+  <rect x="66" y="118" width="3" height="96" rx="1.5" fill="#3fcbb0"/>
+
+  <text x="90" y="140" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" font-weight="500" letter-spacing="2" fill="#4f7a72">ENBY · 珠三角 / 粤东 · zh-Hans zh-Hant en-US es-ES</text>
+
+  <text x="88" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="62" font-weight="600" letter-spacing="-1.4" fill="#22405e">Clementina Lam Choi</text>
+
+  <text x="91" y="244" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="16" letter-spacing="1.5" fill="#5f8a80">deep diving...</text>
+
+  <g transform="translate(886 84) rotate(-8 56 56)">
+    <ellipse cx="56" cy="119" rx="44" ry="8" fill="#b9c9c4" opacity="0.16"/>
+    <g class="jb">
+      <rect width="112" height="112" rx="35" fill="url(#jelly)" opacity="0.92"/>
+      <rect x="0.75" y="0.75" width="110.5" height="110.5" rx="34.5" fill="none" stroke="#ffffff" stroke-opacity="0.72" stroke-width="1.5"/>
+      <ellipse cx="40" cy="33" rx="22" ry="14" fill="#ffffff" opacity="0.62"/>
+      <ellipse cx="84" cy="88" rx="17" ry="9" fill="#ffffff" opacity="0.12"/>
+    </g>
+  </g>
+
+  <g transform="translate(1012 160) rotate(7 38 38)">
+    <ellipse cx="38" cy="82" rx="30" ry="6" fill="#b9c9c4" opacity="0.15"/>
+    <g class="jb jb2">
+      <rect width="76" height="76" rx="24" fill="url(#jelly)" opacity="0.92"/>
+      <rect x="0.75" y="0.75" width="74.5" height="74.5" rx="23.5" fill="none" stroke="#ffffff" stroke-opacity="0.72" stroke-width="1.5"/>
+      <ellipse cx="26" cy="22" rx="15" ry="9" fill="#ffffff" opacity="0.6"/>
+      <ellipse cx="58" cy="60" rx="11" ry="6" fill="#ffffff" opacity="0.11"/>
+    </g>
+  </g>
+
+  <g transform="translate(936 222) rotate(-4 26 26)">
+    <ellipse cx="26" cy="56" rx="20" ry="4" fill="#b9c9c4" opacity="0.16"/>
+    <g class="jb jb3">
+      <rect width="52" height="52" rx="16" fill="url(#jelly)" opacity="0.92"/>
+      <rect x="0.75" y="0.75" width="50.5" height="50.5" rx="15.5" fill="none" stroke="#ffffff" stroke-opacity="0.72" stroke-width="1.5"/>
+      <ellipse cx="18" cy="15" rx="10" ry="6" fill="#ffffff" opacity="0.62"/>
+    </g>
+  </g>
+</svg>

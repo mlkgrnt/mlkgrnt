@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-label="Palettes from jelly-cube-ocean">
+  <title>Palettes</title>
+  <desc>Eight jelly palettes from the jelly-cube-ocean project.</desc>
+
+  <g transform="translate(338 30) rotate(-6 24 24)">
+    <rect width="48" height="48" rx="15" fill="#8ef0d8"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(406 30) rotate(5 24 24)">
+    <rect width="48" height="48" rx="15" fill="#ffb3d1"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(474 30) rotate(-4 24 24)">
+    <rect width="48" height="48" rx="15" fill="#9db8ff"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(542 30) rotate(6 24 24)">
+    <rect width="48" height="48" rx="15" fill="#ffe08a"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(610 30) rotate(-5 24 24)">
+    <rect width="48" height="48" rx="15" fill="#c4a4ff"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(678 30) rotate(5 24 24)">
+    <rect width="48" height="48" rx="15" fill="#ffb894"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(746 30) rotate(-6 24 24)">
+    <rect width="48" height="48" rx="15" fill="#8ff0c8"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+
+  <g transform="translate(814 30) rotate(4 24 24)">
+    <rect width="48" height="48" rx="15" fill="#7fd4ff"/>
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="14.5" fill="none" stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.5"/>
+    <ellipse cx="17" cy="14" rx="9" ry="6" fill="#ffffff" opacity="0.65"/>
+  </g>
+</svg>

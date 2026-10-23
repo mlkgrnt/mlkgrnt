@@ -1,0 +1,53 @@
+name: Update language stats
+
+# 每天 UTC 03:17（北京时间 11:17）跑一次，也可以手动触发
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - "scripts/lang_stats.py"
+      - ".github/workflows/lang-stats.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lang-stats
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate SVGs
+        env:
+          GH_OWNER: mlkgrnt
+          # 想看私有仓库，去 Settings → Secrets 加一个 LANG_TOKEN（个人 PAT，scope: repo）。
+          # 没加就用仓库自带的 token，只能读到公开仓库。
+          GH_TOKEN: ${{ secrets.LANG_TOKEN || github.token }}
+          # Jupyter Notebook 的字节数会虚高（里面是一大坨 JSON），想排除就取消下一行注释
+          # EXCLUDE_LANGS: "Jupyter Notebook"
+          # EXCLUDE_REPOS: "旧项目名,测试仓库"
+          TOP_N: "7"
+        run: python scripts/lang_stats.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/langs-light.svg assets/langs-dark.svg
+          if git diff --staged --quiet; then
+            echo "统计结果没有变化，跳过提交"
+          else
+            git commit -m "chore: 更新语言统计 $(date -u +%Y-%m-%d)"
+            git push
+          fi

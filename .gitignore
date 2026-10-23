@@ -1,0 +1,9 @@
+# 本地预览，不进仓库
+preview.html
+assets/sample/
+
+# 源素材，属于另一个项目，不该待在这个仓库里
+jelly-cube-ocean.html
+
+# 工作区记忆
+.workbuddy/
