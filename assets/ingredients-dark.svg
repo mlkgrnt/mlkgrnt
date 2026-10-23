@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 444" width="100%" role="img" aria-label="可能包含如下成分">
 <title>可能包含如下成分</title>
-<desc>拉美文学：正在高强度重读马尔克斯；法语音乐剧：Le Rouge et Le Noir、Mozart l'Opéra Rock；语言学：汉藏语系汉语族 / 印欧语系罗曼语族；Vibe coding：ScheduleX 和 Junimo-MCP 都很好玩，其余详见仓库；西语学习中：进度慢得要死；金酒 / 麦当劳 / Gelato：品鉴仙人，欢迎找我喝酒；擅长找合法的冷门资料：扣 1 无偿帮你找，和我不熟也没关系</desc>
+<desc>拉美文学：准备高强度读马尔克斯；法语音乐剧：Le Rouge et Le Noir &amp; Mozart l'Opéra Rock；语言学：汉藏语系汉语族 / 印欧语系罗曼语族；Vibe Coding：ScheduleX 和 Junimo-MCP 都很好玩，其余详见仓库；西语学习中：但是进度慢得要死；金酒 / 麦当劳 / Gelato：品鉴仙人，欢迎找我喝酒；擅长找合法的冷门资料：扣 1 无偿帮你找，和我不熟也没关系</desc>
 <defs><linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1a1d"/><stop offset="1" stop-color="#101420"/></linearGradient></defs>
 <rect width="860" height="444" rx="20" fill="url(#card)"/>
 <rect x="0.5" y="0.5" width="859" height="443" rx="20" fill="none" stroke="#223035" stroke-width="1"/>
@@ -10,23 +10,23 @@
 <circle cx="48" cy="126" r="4.5" fill="#8ef0d8" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-0.00s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-0.00s" repeatCount="indefinite"/></circle>
 <text x="70" y="126" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">📚</text>
 <text x="100" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">拉美文学</text>
-<text x="288" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">正在高强度重读马尔克斯</text>
+<text x="288" y="126" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">准备高强度读马尔克斯</text>
 <circle cx="48" cy="170" r="4.5" fill="#ffb3d1" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-0.42s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-0.42s" repeatCount="indefinite"/></circle>
 <text x="70" y="170" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">🎭</text>
 <text x="100" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">法语音乐剧</text>
-<text x="288" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">Le Rouge et Le Noir、Mozart l'Opéra Rock</text>
+<text x="288" y="170" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">Le Rouge et Le Noir &amp; Mozart l'Opéra Rock</text>
 <circle cx="48" cy="214" r="4.5" fill="#9db8ff" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-0.84s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-0.84s" repeatCount="indefinite"/></circle>
 <text x="70" y="214" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">🗣️</text>
 <text x="100" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">语言学</text>
 <text x="288" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">汉藏语系汉语族 / 印欧语系罗曼语族</text>
 <circle cx="48" cy="258" r="4.5" fill="#ffe08a" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-1.26s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-1.26s" repeatCount="indefinite"/></circle>
 <text x="70" y="258" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">💻</text>
-<text x="100" y="258" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">Vibe coding</text>
+<text x="100" y="258" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">Vibe Coding</text>
 <text x="288" y="258" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">ScheduleX 和 Junimo-MCP 都很好玩，其余详见仓库</text>
 <circle cx="48" cy="302" r="4.5" fill="#c4a4ff" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-1.68s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-1.68s" repeatCount="indefinite"/></circle>
 <text x="70" y="302" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">🥘</text>
 <text x="100" y="302" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">西语学习中</text>
-<text x="288" y="302" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">进度慢得要死</text>
+<text x="288" y="302" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="13" fill="#8b9a97" dominant-baseline="central">但是进度慢得要死</text>
 <circle cx="48" cy="346" r="4.5" fill="#ffb894" opacity="0.9"><animate attributeName="r" values="4;6.2;4" dur="3.2s" begin="-2.10s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;1;0.6" dur="3.2s" begin="-2.10s" repeatCount="indefinite"/></circle>
 <text x="70" y="346" font-family="'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif" font-size="15" dominant-baseline="central">🍸</text>
 <text x="100" y="346" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="14" font-weight="600" fill="#e6edf3" dominant-baseline="central">金酒 / 麦当劳 / Gelato</text>

@@ -86,7 +86,8 @@ def build(theme: str) -> str:
     p.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {height}" '
              f'width="100%" role="img" aria-label="{esc(title)}">')
     p.append(f'<title>{esc(title)}</title>')
-    p.append("<desc>" + "；".join(f"{it['name']}：{it['note']}" for it in items) + "</desc>")
+    # desc 里也要转义：内容里出现 & 会把 XML 直接弄坏
+    p.append("<desc>" + esc("；".join(f"{it['name']}：{it['note']}" for it in items)) + "</desc>")
 
     # 背景
     p.append(f'<defs><linearGradient id="card" x1="0" y1="0" x2="1" y2="1">'
