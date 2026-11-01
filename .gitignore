@@ -7,3 +7,5 @@ jelly-cube-ocean.html
 
 # 工作区记忆
 .workbuddy/
+assets/_frame*.svg
+__pycache__/

@@ -46,4 +46,8 @@ banner 是 SVG 内联动画：三颗果冻在八套配色之间循环漂移（18
 - 名字 / deep diving / 顶部那行小字 → assets/hero-*.svg 里的 <text>
 - 变色速度 → 渐变里三个 stop 上的 dur="18s"
 - Q 弹幅度 → <style> 里 @keyframes sq 的 scale 数值
+
+贪吃蛇（scripts/build_snake.py，算法照搬 platane/snk，只换了美术）：
+- 想单独看某一帧：python scripts/build_snake.py --frame 40 [--dark]
+- 想改快慢：环境变量 SNAKE_STEP_MS=75（每格毫秒数）
 -->
