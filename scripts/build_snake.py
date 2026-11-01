@@ -59,19 +59,25 @@ LEFT = 34
 TOP = 52
 WIDTH = 860
 
-SNAKE_N = 4         # 蛇长，对应 snk 的 snake4
+START_LEN = 4      # 进场时的长度，对应 snk 的 snake4
+MAX_LEN = 14       # 吃满之后的长度上限；再长就在 7 行的网格里糊成一坨了
 
 LEVELS = {
     "light": ["#edf6f3", "#c9f2e6", "#93e5d0", "#57d2b6", "#26a892"],
     "dark": ["#161e21", "#1f3d37", "#2f6f63", "#4fb39c", "#7fe8cf"],
 }
 SNAKE = {"light": "#22405e", "dark": "#e6f6f1"}
+# 蛇身循环换色（跟 banner 上那三颗果冻一个思路：整条共用一套色，一起漂移）
+SNAKE_CYCLE = {
+    "light": ["#22405e", "#4b3480", "#8e3a63", "#1c6055"],
+    "dark": ["#e6f6f1", "#cfc4ff", "#ffc9de", "#c4fff0"],
+}
 LABEL = {"light": "#6b8f88", "dark": "#8b949e"}
 SANS = ("-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', "
         "'PingFang SC', 'Microsoft YaHei', sans-serif")
 
 Point = tuple[int, int]
-Body = tuple[Point, ...]          # 头在前，长度恒为 SNAKE_N
+Body = tuple[Point, ...]          # 头在前；长度会随进食增长
 
 DIRS = ((1, 0), (-1, 0), (0, 1), (0, -1))
 
@@ -133,12 +139,13 @@ def bfs_path(body: Body, targets: set[Point], w: int, h: int,
 
 
 def route(grid: dict[Point, int], w: int, h: int) -> list[Body]:
-    """吃掉所有彩色格子的整条轨迹，一头一尾都在画面外。"""
+    """从网格左上角进场，吃掉所有彩色格子，最后从顶部离场。
+
+    和 snk 一样从 (0,-1) 进场（头朝右、身体在后面拖着，落进第 0 列），
+    区别是每吃一格身体长一节（snk 是定长 4 节）。
+    """
     targets = {p for p, lv in grid.items() if lv > 0}
-    # snk 固定从 (0,-1) 进场；这里改成从第一个目标所在列的顶端进场，
-    # 免得开头白白横穿十几格空列（进场点本身在裁剪区外，看不出来）
-    c0 = min((x for x, _ in targets), default=0)
-    body: Body = ((c0, -1), (c0 + 1, -1), (c0 + 2, -1), (c0 + 3, -1))
+    body: Body = tuple((i, -1) for i in range(START_LEN))
     chain: list[Body] = [body]
 
     while targets:
@@ -151,21 +158,28 @@ def route(grid: dict[Point, int], w: int, h: int) -> list[Body]:
             step = (dx, 0) if dx else (0, dy)
             body = ((body[0][0] + step[0], body[0][1] + step[1]),) + body[:-1]
             chain.append(body)
-            continue
-        for st in path:
-            body = st
-            chain.append(body)
-            if body[0] in targets:
-                targets.discard(body[0])
+        else:
+            # bfs_path 一碰到目标格就返回，所以吃只发生在路径末尾
+            for st in path:
+                body = st
+                chain.append(body)
+
+        if body[0] in targets:
+            targets.discard(body[0])
+            if len(body) < MAX_LEN:
+                # 长一节：尾巴原地不动，多出来的那节就长在尾巴上
+                body = body + (body[-1],)
+                chain.append(body)
 
     # 收尾：把头一路顶出画面，整条蛇都在裁剪区外之后循环就无缝了
-    for _ in range(32):
+    reach = len(body) + 20
+    for _ in range(reach + 16):
         if all(p[1] < 0 for p in body):
             break
         hx, hy = body[0]
         for dx, dy in ((0, -1), (-1, 0), (1, 0)):
             nx, ny = hx + dx, hy + dy
-            if not (-3 <= nx < w + 3 and ny >= -10):
+            if not (-3 <= nx < w + 3 and ny >= -reach):
                 continue
             if (nx, ny) in body[1:]:
                 continue
@@ -192,6 +206,29 @@ def create_animation(name: str, keyframes: list[tuple[float, str]]) -> str:
     body = "".join(",".join(pct(t) for t in ts) + "{" + st + "}"
                    for st, ts in sorted(merged.items(), key=lambda kv: kv[1][0]))
     return f"@keyframes {name}{{{body}}}"
+
+
+def color_keyframes(theme: str) -> list[tuple[float, str]]:
+    """蛇身循环换色。整条共用同一套关键帧，所以任何时刻颜色都一致——
+    这点很重要：还没长出来的节要能完全藏进尾巴里，颜色必须一样。"""
+    pal = SNAKE_CYCLE[theme]
+    n = len(pal)
+    return [(k / n, f"fill:{pal[k % n]}") for k in range(n)] + [(1.0, f"fill:{pal[0]}")]
+
+
+def mix_color(a: str, b: str, f: float) -> str:
+    ca = [int(a[i:i + 2], 16) for i in (1, 3, 5)]
+    cb = [int(b[i:i + 2], 16) for i in (1, 3, 5)]
+    return "#" + "".join(f"{round(x + (y - x) * f):02x}" for x, y in zip(ca, cb))
+
+
+def cycle_color(theme: str, t: float) -> str:
+    """静态帧用：算出 t（0~1）这一刻蛇该是什么颜色。"""
+    pal = SNAKE_CYCLE[theme]
+    n = len(pal)
+    x = (t % 1.0) * n
+    i = int(x) % n
+    return mix_color(pal[i], pal[(i + 1) % n], x - int(x))
 
 
 def cell_xy(p: Point) -> tuple[float, float]:
@@ -284,7 +321,9 @@ def build(theme: str, cal: dict, cols: int, rows: int, chain: list[Body],
                      f'height="{SIZE_DOT}" rx="{RX}" ry="{RX}"/>')
 
     # ---- 蛇身 ----
-    parts = min(SNAKE_N, len(chain[0]))
+    # 身体长度逐帧变化，所以按"最长的那一帧"铺元素；还没长出来的节
+    # 一律贴在尾巴上（同尺寸同颜色，完全重合所以看不见），长出来时自然从尾巴冒出来
+    parts = max(len(b) for b in chain)
     d_min = SIZE_DOT * 0.8
     d_max = SIZE_CELL * 0.9
     i_max = min(4, parts)
@@ -296,28 +335,31 @@ def build(theme: str, cal: dict, cols: int, rows: int, chain: list[Body],
         off = (SIZE_CELL - s) / 2
         r = min(4.5, (4 * s) / SIZE_DOT)
 
-        positions = [chain[j][i] for j in range(total)]
+        positions = [b[min(i, len(b) - 1)] for b in chain]
         name = f"p{i}"
         if static_frame is not None:
-            bx, by = cell_xy(positions[min(static_frame, total - 1)])
+            k = min(static_frame, total - 1)
+            bx, by = cell_xy(positions[k])
             tf = f'transform="translate({bx},{by})"'
             cls = "p"
+            st = f'style="fill:{cycle_color(theme, k / total)}"'
         else:
             tfs = remove_interpolated(positions)
             css.append(create_animation(
                 name,
                 [(t / total, "transform:translate({:.1f}px,{:.1f}px)".format(*cell_xy(p)))
-                 for p, t in tfs]))
+                 for p, t in tfs] + color_keyframes(theme)))
             bx, by = cell_xy(positions[0])
             css.append(f".p.{name}{{transform:translate({bx}px,{by}px);"
                        f"animation-name:{name}}}")
             tf = ""
+            st = ""
             cls = f"p {name}"
 
         if i == 0:
             # 头：加一点果冻方的镜面高光，跟着头一起平移
             part_elems.append(
-                f'<g class="{cls}" {tf}>'
+                f'<g class="{cls}" {tf} {st}>'
                 f'<rect x="{off:.1f}" y="{off:.1f}" width="{s:.1f}" height="{s:.1f}" '
                 f'rx="{r:.1f}" ry="{r:.1f}"/>'
                 f'<ellipse cx="{off + s * 0.30:.1f}" cy="{off + s * 0.26:.1f}" '
@@ -325,7 +367,7 @@ def build(theme: str, cal: dict, cols: int, rows: int, chain: list[Body],
                 f'</g>')
         else:
             part_elems.append(
-                f'<rect class="{cls}" {tf} x="{off:.1f}" y="{off:.1f}" '
+                f'<rect class="{cls}" {tf} {st} x="{off:.1f}" y="{off:.1f}" '
                 f'width="{s:.1f}" height="{s:.1f}" rx="{r:.1f}" ry="{r:.1f}"/>')
 
     elems.append("<style>")
