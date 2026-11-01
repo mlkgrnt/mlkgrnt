@@ -50,6 +50,6 @@ banner 是 SVG 内联动画：三颗果冻在八套配色之间循环漂移（18
 贪吃蛇（scripts/build_snake.py，算法照搬 platane/snk，只换了美术）：
 - 想单独看某一帧：python scripts/build_snake.py --frame 40 [--dark]
 - 想改快慢：环境变量 SNAKE_STEP_MS=75（每格毫秒数）
-- 进场长度 / 长度上限：脚本里的 START_LEN、MAX_LEN
+- 进场长度 / 长度上限 / 长得多快：脚本里的 START_LEN、MAX_LEN、GROW_EVERY
 - 换色：脚本里的 SNAKE_CYCLE，四个颜色循环一轮
 -->

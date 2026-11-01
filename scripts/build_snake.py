@@ -60,7 +60,8 @@ TOP = 52
 WIDTH = 860
 
 START_LEN = 4      # 进场时的长度，对应 snk 的 snake4
-MAX_LEN = 14       # 吃满之后的长度上限；再长就在 7 行的网格里糊成一坨了
+MAX_LEN = 12       # 长度上限；再长就在 7 行的网格里糊成一坨了
+GROW_EVERY = 2     # 每吃几格长一节。1 = 吃一格长一格（长太快，连续几帧进食会猛蹿）
 
 LEVELS = {
     "light": ["#edf6f3", "#c9f2e6", "#93e5d0", "#57d2b6", "#26a892"],
@@ -147,6 +148,7 @@ def route(grid: dict[Point, int], w: int, h: int) -> list[Body]:
     targets = {p for p, lv in grid.items() if lv > 0}
     body: Body = tuple((i, -1) for i in range(START_LEN))
     chain: list[Body] = [body]
+    bites = 0          # 已经吃掉几格
 
     while targets:
         path = bfs_path(body, targets, w, h)
@@ -166,9 +168,11 @@ def route(grid: dict[Point, int], w: int, h: int) -> list[Body]:
 
         if body[0] in targets:
             targets.discard(body[0])
+            bites += 1
             # 长一节：把这一帧改成"头进了新格、尾巴原地不动"。
             # 不能另加一帧——那会插进一格不移动的画面，每次进食都卡一下。
-            if len(chain) >= 2 and len(chain[-2]) < MAX_LEN:
+            if (bites % GROW_EVERY == 0 and len(chain) >= 2
+                    and len(chain[-2]) < MAX_LEN):
                 chain[-1] = (body[0],) + chain[-2]
                 body = chain[-1]
 
