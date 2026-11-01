@@ -14,7 +14,7 @@
 <text x="30" y="89" font-size="13" fill="#f0f6fc" dominant-baseline="central">Kotlin</text>
 <text x="830" y="89" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">20%</text>
 <rect x="200" y="117" width="540" height="12" rx="6" fill="#21262d"/>
-<rect x="200" y="117" width="62.7" height="12" rx="6" fill="#3572A5"/>
+<rect x="200" y="117" width="62.8" height="12" rx="6" fill="#3572A5"/>
 <text x="30" y="123" font-size="13" fill="#f0f6fc" dominant-baseline="central">Python</text>
 <text x="830" y="123" font-size="13" fill="#8b949e" text-anchor="end" dominant-baseline="central">12%</text>
 <rect x="200" y="151" width="540" height="12" rx="6" fill="#21262d"/>
