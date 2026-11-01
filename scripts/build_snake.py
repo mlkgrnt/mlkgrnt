@@ -166,10 +166,11 @@ def route(grid: dict[Point, int], w: int, h: int) -> list[Body]:
 
         if body[0] in targets:
             targets.discard(body[0])
-            if len(body) < MAX_LEN:
-                # 长一节：尾巴原地不动，多出来的那节就长在尾巴上
-                body = body + (body[-1],)
-                chain.append(body)
+            # 长一节：把这一帧改成"头进了新格、尾巴原地不动"。
+            # 不能另加一帧——那会插进一格不移动的画面，每次进食都卡一下。
+            if len(chain) >= 2 and len(chain[-2]) < MAX_LEN:
+                chain[-1] = (body[0],) + chain[-2]
+                body = chain[-1]
 
     # 收尾：把头一路顶出画面，整条蛇都在裁剪区外之后循环就无缝了
     reach = len(body) + 20
