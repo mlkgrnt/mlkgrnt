@@ -1,0 +1,3 @@
+# 这个仓库里的生成物（SVG）由脚本写出，CI 在 Linux 上跑。
+# 统一成 LF，否则 Windows 本地跑一遍就会把整个文件重写一遍。
+* text=auto eol=lf

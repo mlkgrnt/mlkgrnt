@@ -166,7 +166,7 @@ def render(rows: list[tuple[str, float, str]], repo_count: int, theme: str, out:
     p.append("</g></svg>")
 
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text("\n".join(p), encoding="utf-8")
+    out.write_text("\n".join(p), encoding="utf-8", newline="\n")
     print(f"  → {out}")
 
 

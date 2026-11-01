@@ -133,7 +133,7 @@ def build(theme: str) -> str:
 def main() -> None:
     for theme in ("light", "dark"):
         out = ASSETS / f"ingredients-{theme}.svg"
-        out.write_text(build(theme), encoding="utf-8")
+        out.write_text(build(theme), encoding="utf-8", newline="\n")
         print(f"  → {out.relative_to(ROOT)}")
 
 

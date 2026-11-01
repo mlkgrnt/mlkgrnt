@@ -165,7 +165,7 @@ def main() -> None:
     print(f"  {cal['totalContributions']} contributions, {len(cal['weeks'])} weeks")
     for theme in ("light", "dark"):
         out = ASSETS / f"snake-{theme}.svg"
-        out.write_text(build(theme, cal), encoding="utf-8")
+        out.write_text(build(theme, cal), encoding="utf-8", newline="\n")
         print(f"  → {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
 
