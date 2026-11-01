@@ -9,6 +9,7 @@ on:
     branches: [main, master]
     paths:
       - "scripts/lang_stats.py"
+      - "scripts/build_snake.py"
       - ".github/workflows/lang-stats.yml"
 
 permissions:
@@ -38,16 +39,18 @@ jobs:
           # EXCLUDE_LANGS: "Jupyter Notebook"
           # EXCLUDE_REPOS: "旧项目名,测试仓库"
           TOP_N: "7"
-        run: python scripts/lang_stats.py
+        run: |
+          python scripts/lang_stats.py
+          python scripts/build_snake.py
 
       - name: Commit if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/langs-light.svg assets/langs-dark.svg
+          git add assets/langs-light.svg assets/langs-dark.svg assets/snake-light.svg assets/snake-dark.svg
           if git diff --staged --quiet; then
             echo "统计结果没有变化，跳过提交"
           else
-            git commit -m "chore: 更新语言统计 $(date -u +%Y-%m-%d)"
+            git commit -m "chore: 更新语言统计与贡献图 $(date -u +%Y-%m-%d)"
             git push
           fi

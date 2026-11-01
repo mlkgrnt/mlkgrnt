@@ -21,6 +21,13 @@
   </picture>
 </p>
 
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg">
+    <img src="assets/snake-light.svg" width="100%" alt="过去一年的 GitHub 贡献日历，一条蛇扫过时格子会亮起">
+  </picture>
+</p>
+
 <p align="center"><em>Comiendo sólo por hambre, amando sin mentir.</em></p>
 
 <p align="center">
