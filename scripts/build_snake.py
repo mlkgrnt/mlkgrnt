@@ -194,6 +194,11 @@ def create_animation(name: str, keyframes: list[tuple[float, str]]) -> str:
     return f"@keyframes {name}{{{body}}}"
 
 
+def cell_xy(p: Point) -> tuple[float, float]:
+    """格点坐标 → 画布像素。蛇和格子必须走同一个换算，否则会整体错位。"""
+    return LEFT + p[0] * SIZE_CELL, TOP + p[1] * SIZE_CELL
+
+
 def lerp(k: float, a: float, b: float) -> float:
     return (1 - k) * a + k * b
 
@@ -294,17 +299,17 @@ def build(theme: str, cal: dict, cols: int, rows: int, chain: list[Body],
         positions = [chain[j][i] for j in range(total)]
         name = f"p{i}"
         if static_frame is not None:
-            px, py = positions[min(static_frame, total - 1)]
-            tf = f'transform="translate({px * SIZE_CELL},{py * SIZE_CELL})"'
+            bx, by = cell_xy(positions[min(static_frame, total - 1)])
+            tf = f'transform="translate({bx},{by})"'
             cls = "p"
         else:
             tfs = remove_interpolated(positions)
             css.append(create_animation(
                 name,
-                [(t / total, f"transform:translate({p[0] * SIZE_CELL}px,{p[1] * SIZE_CELL}px)")
+                [(t / total, "transform:translate({:.1f}px,{:.1f}px)".format(*cell_xy(p)))
                  for p, t in tfs]))
-            x0, y0 = positions[0]
-            css.append(f".p.{name}{{transform:translate({x0 * SIZE_CELL}px,{y0 * SIZE_CELL}px);"
+            bx, by = cell_xy(positions[0])
+            css.append(f".p.{name}{{transform:translate({bx}px,{by}px);"
                        f"animation-name:{name}}}")
             tf = ""
             cls = f"p {name}"
