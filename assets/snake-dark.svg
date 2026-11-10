@@ -374,6 +374,7 @@
 <rect class="c" x="800.5" y="143.5" width="12" height="12" rx="4" ry="4"/>
 <rect class="c" x="815.5" y="53.5" width="12" height="12" rx="4" ry="4"/>
 <rect class="c" x="815.5" y="68.5" width="12" height="12" rx="4" ry="4"/>
+<rect class="c" x="815.5" y="83.5" width="12" height="12" rx="4" ry="4"/>
 <g class="p p0"  ><rect x="0.8" y="0.8" width="13.5" height="13.5" rx="4.5" ry="4.5"/><ellipse cx="4.8" cy="4.3" rx="2.3" ry="1.8" fill="#fff" opacity="0.5"/></g>
 <rect class="p p1"   x="1.6" y="1.6" width="11.8" height="11.8" rx="3.9" ry="3.9"/>
 <rect class="p p2"   x="2.2" y="2.2" width="10.6" height="10.6" rx="3.5" ry="3.5"/>
