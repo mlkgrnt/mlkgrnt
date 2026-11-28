@@ -1,0 +1,5 @@
+name: probe5
+
+on:/n  schedule:/n    - cron: "*/5 * * * *"
+  workflow_dispatch:/n/njobs:/n  p:/n    runs-on: ubuntu-latest
+    steps:/n      - run: echo hi
